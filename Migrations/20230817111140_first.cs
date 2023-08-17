@@ -5,7 +5,7 @@
 namespace Tset1.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,9 @@ namespace Tset1.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    UserName = table.Column<string>(type: "TEXT", nullable: true)
+                    UserName = table.Column<string>(type: "TEXT", nullable: true),
+                    PassWordHash = table.Column<byte[]>(type: "BLOB", nullable: true),
+                    PassWordSalt = table.Column<byte[]>(type: "BLOB", nullable: true)
                 },
                 constraints: table =>
                 {

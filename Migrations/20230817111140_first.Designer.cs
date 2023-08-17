@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Tset1.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230816161238_initial")]
-    partial class initial
+    [Migration("20230817111140_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,12 @@ namespace Tset1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<byte[]>("PassWordHash")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("PassWordSalt")
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");

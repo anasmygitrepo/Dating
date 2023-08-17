@@ -22,6 +22,12 @@ namespace Tset1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<byte[]>("PassWordHash")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("PassWordSalt")
+                        .HasColumnType("BLOB");
+
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
